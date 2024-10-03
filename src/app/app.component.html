@@ -1,0 +1,15 @@
+<div class="container-fluid g-0">
+  <app-header  (sideNavToggle)="sideNavStatus = $event;"  />
+<main>
+  <app-sidenav [sideNavStatus]="sideNavStatus"  [class]="{'app-sidenav-open': sideNavStatus}"/>
+<div class="display-area p-3" [class]="{'display-area-shrink': sideNavStatus}">
+  
+  <router-outlet />
+</div>
+
+</main>
+
+
+</div>
+
+
