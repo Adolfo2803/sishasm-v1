@@ -6,6 +6,7 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { ModuloComponent } from './modulo/modulo.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { LoginComponent } from './login/login.component';
+import CirugiaComponent from './cirugias/cirugias.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -15,5 +16,7 @@ export const routes: Routes = [
     {path: 'reportes', component: ReportesComponent},
     {path: 'modulo', component: ModuloComponent},
     {path: 'configuracion', component: ConfiguracionComponent},
+    {path: 'cirugias', component: CirugiaComponent},
+
     {path:'**',redirectTo:'/home',pathMatch:'full'}
 ];
