@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductoService } from '../services/producto.service';
+import { PacienteService } from '../services/paciente.service';
+
 
 @Component({
   selector: 'app-cirugia',
@@ -10,8 +12,13 @@ import { ProductoService } from '../services/producto.service';
   styleUrls: ['./cirugias.component.css'],
 })
 export default class CirugiaComponent {
-  cirugiaForm = new FormGroup({
-    fechaCirugia: new FormControl(''),
+
+  constructor(public produService: ProductoService, public pacienteService: PacienteService){}
+
+
+
+  cirugiaForm: FormGroup = new FormGroup({
+    fechaCirugia: new FormControl('', ),
     numCirugia: new FormControl(''),
     numExpediente: new FormControl(''),
     nomPaciente: new FormControl(''),
@@ -44,7 +51,8 @@ export default class CirugiaComponent {
     } else {
       alert('El formulario no es válido. Por favor, rellena todos los campos requeridos.');
     }
+   this.pacienteService.agregarPaciente(this.cirugiaForm.value)
   }
 
-  constructor(public produService: ProductoService){}
 }
+
