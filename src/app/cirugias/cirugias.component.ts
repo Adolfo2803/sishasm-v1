@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
   selector: 'app-cirugia',
@@ -44,4 +45,6 @@ export default class CirugiaComponent {
       alert('El formulario no es válido. Por favor, rellena todos los campos requeridos.');
     }
   }
+
+  constructor(public produService: ProductoService){}
 }
